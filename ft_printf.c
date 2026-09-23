@@ -6,42 +6,65 @@
 /*   By: emirhyil <emirhyil@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 16:12:29 by emirhyil          #+#    #+#             */
-/*   Updated: 2026/09/23 16:22:53 by emirhyil         ###   ########.fr       */
+/*   Updated: 2026/09/23 18:20:42 by emirhyil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "ft_printf.h"
 
-int	format(char c)
+int	format(va_list ap, const char c)
 {
 	if (c == 'c')
-		ft_putchar(va_arg(ap, char));
+		return ((ft_putchar(va_arg(ap, int))));
 	if (c == 's')
-		ft_putstr(va_arg(ap, char *));
+		return ((ft_putstr(va_arg(ap, char *))));
 	if (c == 'p')
-		adresptr(va_arg(ap, void *));
+		return ((adresptr(va_arg(ap, void *))));
 	if (c == 'd' || c == 'i')
-		ft_putnbr(va_arg(ap, int));
+		return ((ft_putnbr(va_arg(ap, int))));
 	if (c == 'u')
-		ft_putunsigned(va_arg(ap, unsigned int));
+		return ((ft_putunsigned(va_arg(ap, unsigned int))));
 	if (c == 'x')
-		lower_hex(va_arg(ap, char *));
+		return ((lower_hex(va_arg(ap, unsigned int))));
 	if (c == 'X')
-		upper_hex(va_arg(ap, char *));
-	else
-		(c == '%') ft_putchar(" ");
+		return ((upper_hex(va_arg(ap, unsigned int))));
+	if (c == '%')
+		return ((ft_putchar('%')));
+	return 0;
 }
 
 int	ft_printf(const char *string, ...)
 {
-	va_list ap;
-	va_start(ap, string);
+	va_list	ap;
+	int		i;
+	int		len;
 
-	int i = 0;
+	i = 0;
+	len = 0;
+	va_start(ap, string);
 	while (string[i] != '\0')
 	{
 		if (string[i] == '%')
-			format(string[i + 1]);
+		{
+			i++;
+			if (!string)
+				return (0);
+			len += format(ap, string[i]);
+		}
+		else
+			len += ft_putchar(string[i]);
 		i++;
 	}
+	return (len);
+}
+
+int	main(void)
+{
+	int x=42123123;
+	unsigned int y = 42123123;
+	ft_printf("harf : %c\nmetin : %s\nadres : %p\n", 'x', "emirhan", &x);
+	ft_printf("tam sayi : %d\n%% i : %i\nunsigned decimal : %u\n", x,x,y);
+	ft_printf("lowercase : %x\nuppercase : %X\n", x,y);
+
 }
