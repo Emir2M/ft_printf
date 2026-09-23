@@ -6,7 +6,7 @@
 /*   By: emirhyil <emirhyil@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 16:12:59 by emirhyil          #+#    #+#             */
-/*   Updated: 2026/09/23 16:34:24 by emirhyil         ###   ########.fr       */
+/*   Updated: 2026/09/23 19:57:42 by emirhyil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,3 +77,5 @@ int	adresptr(void *ptr)
 	len += (lower_hex((unsigned long long)ptr));
 	return (len);
 }
+
+-a
