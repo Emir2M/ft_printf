@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_utils.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emirhyil <emirhyil@student.42istanbul.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/23 16:12:59 by emirhyil          #+#    #+#             */
+/*   Updated: 2026/09/23 16:34:24 by emirhyil         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
 
@@ -22,7 +33,7 @@ int	ft_putstr(char *s)
 	return (i);
 }
 
-int	ft_putnbr(int n)    // ai
+int	ft_putnbr(int n)
 {
 	int	len;
 
@@ -53,42 +64,15 @@ int	ft_putunsigned(unsigned int n)
 	return (len);
 }
 
-int	upper_hex(unsigned long long n)
-{
-	char	*hex;
-	int		len;
-
-	hex = "0123456789ABCDEF";
-	len = 0;
-	if (n >= 16)
-		len += upper_hex(n / 16);
-	len += ft_putchar(hex[n % 16]);
-	return (len);
-}
-
-int	lower_hex(unsigned long long n)
-{
-	char	*hex;
-	int		len;
-
-	hex = "0123456789abcdef";
-	len = 0;
-	if (n >= 16)
-		len += lower_hex(n / 16);
-	len += ft_putchar(hex[n % 16]);
-	return (len);
-}
-
 int	adresptr(void *ptr)
 {
 	int	len;
 
 	len = 0;
 	if (ptr == NULL)
-    {
-        return (ft_putstr("(nil)"));
-    }
-	
+	{
+		return (ft_putstr("(nil)"));
+	}
 	len += ft_putstr("0x");
 	len += (lower_hex((unsigned long long)ptr));
 	return (len);
