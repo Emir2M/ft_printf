@@ -6,7 +6,7 @@
 /*   By: emirhyil <emirhyil@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 16:13:35 by emirhyil          #+#    #+#             */
-/*   Updated: 2026/09/23 19:57:29 by emirhyil         ###   ########.fr       */
+/*   Updated: 2026/09/23 19:59:30 by emirhyil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,3 @@ int	lower_hex(unsigned long long n);
 int	adresptr(void *ptr);
 
 #endif
-
--a

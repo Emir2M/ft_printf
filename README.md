@@ -56,4 +56,3 @@ To compile the library, navigate to the root directory and run `make`. This will
 
 ```bash
 make
--a
