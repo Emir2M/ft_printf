@@ -6,10 +6,9 @@
 /*   By: emirhyil <emirhyil@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 16:12:29 by emirhyil          #+#    #+#             */
-/*   Updated: 2026/09/23 18:20:42 by emirhyil         ###   ########.fr       */
+/*   Updated: 2026/09/23 18:32:18 by emirhyil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "ft_printf.h"
 
@@ -31,7 +30,7 @@ int	format(va_list ap, const char c)
 		return ((upper_hex(va_arg(ap, unsigned int))));
 	if (c == '%')
 		return ((ft_putchar('%')));
-	return 0;
+	return (0);
 }
 
 int	ft_printf(const char *string, ...)
@@ -61,10 +60,12 @@ int	ft_printf(const char *string, ...)
 
 int	main(void)
 {
-	int x=42123123;
-	unsigned int y = 42123123;
-	ft_printf("harf : %c\nmetin : %s\nadres : %p\n", 'x', "emirhan", &x);
-	ft_printf("tam sayi : %d\n%% i : %i\nunsigned decimal : %u\n", x,x,y);
-	ft_printf("lowercase : %x\nuppercase : %X\n", x,y);
+	int				x;
+	unsigned int	y;
 
+	x = 42123123;
+	y = 42123123;
+	ft_printf("harf : %c\nmetin : %s\nadres : %p\n", 'x', "emirhan", &x);
+	ft_printf("tam sayi : %d\n%% i : %i\nunsigned decimal : %u\n", x, x, y);
+	ft_printf("lowercase : %x\nuppercase : %X\n", x, y);
 }

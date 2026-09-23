@@ -6,18 +6,18 @@
 /*   By: emirhyil <emirhyil@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 16:13:35 by emirhyil          #+#    #+#             */
-/*   Updated: 2026/09/23 16:13:40 by emirhyil         ###   ########.fr       */
+/*   Updated: 2026/09/23 18:35:07 by emirhyil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <stdarg.h> //va_... için
-# include <stdio.h>  //printf denemek için
-# include <unistd.h> // write kütüphane
+# include <stdarg.h>
+# include <stdio.h>
+# include <unistd.h>
 
-int	ft_printf(const char *, ...);
+int	ft_printf(const char *string, ...);
 int	ft_putchar(char c);
 int	ft_putstr(char *s);
 int	ft_putnbr(int n);
