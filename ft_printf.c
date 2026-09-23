@@ -6,7 +6,7 @@
 /*   By: emirhyil <emirhyil@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 16:12:29 by emirhyil          #+#    #+#             */
-/*   Updated: 2026/09/23 18:32:18 by emirhyil         ###   ########.fr       */
+/*   Updated: 2026/09/23 18:50:21 by emirhyil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,16 +56,4 @@ int	ft_printf(const char *string, ...)
 		i++;
 	}
 	return (len);
-}
-
-int	main(void)
-{
-	int				x;
-	unsigned int	y;
-
-	x = 42123123;
-	y = 42123123;
-	ft_printf("harf : %c\nmetin : %s\nadres : %p\n", 'x', "emirhan", &x);
-	ft_printf("tam sayi : %d\n%% i : %i\nunsigned decimal : %u\n", x, x, y);
-	ft_printf("lowercase : %x\nuppercase : %X\n", x, y);
 }
