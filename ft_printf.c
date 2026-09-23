@@ -6,7 +6,7 @@
 /*   By: emirhyil <emirhyil@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 16:12:29 by emirhyil          #+#    #+#             */
-/*   Updated: 2026/09/23 18:50:21 by emirhyil         ###   ########.fr       */
+/*   Updated: 2026/09/23 19:34:01 by emirhyil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ int	ft_printf(const char *string, ...)
 			len += ft_putchar(string[i]);
 		i++;
 	}
+	va_end(ap);
 	return (len);
 }
