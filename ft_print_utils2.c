@@ -6,13 +6,13 @@
 /*   By: emirhyil <emirhyil@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 16:13:10 by emirhyil          #+#    #+#             */
-/*   Updated: 2026/09/23 19:59:45 by emirhyil         ###   ########.fr       */
+/*   Updated: 2026/09/25 14:24:08 by emirhyil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	upper_hex(unsigned int n)
+int	upper_hex(unsigned long long n)
 {
 	char	*hex;
 	int		len;
@@ -25,7 +25,7 @@ int	upper_hex(unsigned int n)
 	return (len);
 }
 
-int	lower_hex(unsigned int n)
+int	lower_hex(unsigned long long n)
 {
 	char	*hex;
 	int		len;
